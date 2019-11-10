@@ -1,0 +1,132 @@
+
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-wrapper2{
+  display: flex;
+}
+.modal-container {
+  width: 800px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow-y:scroll;
+  height:90vh;
+  border-radius: 20px;
+}
+
+
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+  font-weight: bolder; 
+}
+
+.modal-body {
+  margin: 0px;
+}
+
+.modal-no{
+  margin: 0 0 0 10;
+  opacity:0.7;
+}
+.modal-pic img{
+  width: 400;
+  height: auto;
+/* float:left; */
+  padding:2px; 
+  border-radius: 20px;
+}
+
+.modal-right span{
+margin: 10 10 10 10;
+}
+
+.modal-audio{
+  width: 0px;
+  height: 60px;
+  margin:10 0 0 10; 
+}
+.modal-audio img{
+  height:50px;
+  width:50px;
+  /* text-align: right; */
+}
+.modal-explain p{
+  /* text-align: center; */
+  width: 300px;
+  /* color: #42b983; */
+  word-wrap: break-word;
+  margin:20 0 0 20;
+}
+
+.comment-header{
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  font-size: 21px;
+}
+
+.comment-header h2{
+  font-size: 24px;
+  border-bottom: solid 3px #87CEFA;
+}
+
+
+.comment-box{
+  margin: 16px;
+}
+.modal-default-button {
+  /* float: right; */
+  left: 990px;
+  top: 110px;
+  /* right: 0em; */
+  position: fixed;
+  text-align: center;
+  z-index: 99;
+}
+.clear{
+  clear: both;
+}
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
