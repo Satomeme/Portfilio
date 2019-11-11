@@ -1,29 +1,119 @@
-
-
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
+h1 {
+	margin-bottom: 60px;
 }
 
-.modal-wrapper {
+ul, li {
+	list-style-type: none;
+	margin: 0;
+  padding: 0;
+  display: inline;
+  list-style-type: none;
+}
+
+.container{
+	text-align:center;
+}
+
+
+.box_inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.arrows {
+	display: table;
+	width: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	top: 50%;
+}
+
+.arrow_left {
   display: table-cell;
-  vertical-align: middle;
+	width: 50%;
+	text-align:left;
+/* 	padding-right: 400px; */
+	box-sizing: border-box;
 }
 
-.modal-wrapper2{
-  display: flex;
+.box_load_inner {
+	display: block;
 }
-.modal-container {
-  width: 800px;
+
+.arrow_rigth {
+	display: table-cell;
+	width: 50%;
+	text-align: right;
+/* 	padding-right: inheritpx; */
+	box-sizing: border-box;
+}
+
+.arrow_span {
+	font-weight: bold;
+	cursor: pointer;
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+
+.arrow_span:hover {
+	color: #f00;
+}
+
+.close {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.box_cover {
+  position: fixed;
+	width: 90%;
+	max-width: 800px;
+	height: 90%;
+	max-height: 700px;
+	top: 50%;
+	left: 50%;
+	padding: 10px;
+	box-sizing: border-box;
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: .3s;
+	transition: .3s;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+}
+
+.box_cover.active {
+	z-index: 10;
+	opacity: 1;
+}
+
+.box {
+  position: fixed;
+	width: 90%;
+	max-width: 1000px;
+	height: 80%;
+	max-height: 1000px;
+	top: 50%;
+	left: 50%;
+	padding: 10px;
+	box-sizing: border-box;
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: .3s;
+	transition: .3s;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+
+/* 	width: 800px; */
   margin: 0px auto;
-  padding: 20px 30px;
+/*   padding: 20px 30px; */
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
@@ -34,99 +124,85 @@
   border-radius: 20px;
 }
 
-
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-  font-weight: bolder; 
+.box.active {
+	z-index: 15;
+	opacity: 1;
+	visibility: visible;
 }
 
-.modal-body {
-  margin: 0px;
+.box_load>li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-.modal-no{
-  margin: 0 0 0 10;
-  opacity:0.7;
+.box_load_inner {
+	padding: 10px 30px;
+	box-sizing: border-box;
 }
-.modal-pic img{
-  width: 400;
+
+.load_0 {
+	background: #c0f8c2;
+}
+
+.load_1 {
+	background: #f8eac0;
+}
+
+.load_2 {
+	background: #cdffe8;
+}
+
+.load_3 {
+	background: #ffd2d4;
+}
+
+.load_4 {
+	background: #ffffff;
+}
+
+.box_load_cover {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.link_list li {
+	cursor: pointer;
+	-webkit-transition: .3s;
+	transition: .3s;
+}
+
+.link_list li:hover {
+	background: #ddd;
+	cursor: pointer;
+}
+
+
+
+
+
+
+.modal-item {
+	display:flex;
+}
+.modal-item p{
+	padding-top:20px;
+  font-size:12px;
+  text-align:left;
+}
+/* modal contents */
+.modal-item img{
+  width: 400;;
   height: auto;
 /* float:left; */
-  padding:2px; 
+padding:20 20 0 30px; 
   border-radius: 20px;
 }
-
-.modal-right span{
-margin: 10 10 10 10;
-}
-
-.modal-audio{
-  width: 0px;
-  height: 60px;
-  margin:10 0 0 10; 
-}
-.modal-audio img{
-  height:50px;
-  width:50px;
-  /* text-align: right; */
-}
-.modal-explain p{
-  /* text-align: center; */
-  width: 300px;
-  /* color: #42b983; */
-  word-wrap: break-word;
-  margin:20 0 0 20;
-}
-
-.comment-header{
-  display: flex;
-  justify-content: space-between;
-  margin: 16px;
-  font-size: 21px;
-}
-
-.comment-header h2{
-  font-size: 24px;
-  border-bottom: solid 3px #87CEFA;
-}
-
-
-.comment-box{
-  margin: 16px;
-}
-.modal-default-button {
-  /* float: right; */
-  left: 990px;
-  top: 110px;
-  /* right: 0em; */
-  position: fixed;
-  text-align: center;
-  z-index: 99;
-}
-.clear{
-  clear: both;
-}
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
+/* end of modal contents */

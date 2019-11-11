@@ -3,40 +3,41 @@
     padding-right:10%;
 }
 /* header */
-.nav{
-    padding: 20px 30px 0 0;
-    /* margin-top: 30px; */
-  }
-  
-  .nav li{
-    display: inline;
-    list-style-type: none;
-    /* padding-right: 30px; */
-    padding: 2px 30px 0 0;
-    /* margin-top: 30px; */
-  }
-  
-  .nav a:link{
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-  .nav a:visited{
-    color: #f0f3f6;
-    text-decoration: none;
-  }
-  .nav a:hover{
-    color: #c0c5ce;
-    text-decoration: none;
-  }
-  .nav a:active{
-    color: #7c818c;
-  }
+header .nav{
+  padding: 20px 30px 0 0;
+  /* margin-top: 30px; */
+}
+
+header .nav li{
+  display: inline;
+  list-style-type: none;
+  /* padding-right: 30px; */
+  padding: 2px 30px 0 0;
+  /* margin-top: 30px; */
+}
+
+header .nav a:link{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+header .nav a:visited{
+  color: #f0f3f6;
+  text-decoration: none;
+}
+header .nav a:hover{
+  color: #c0c5ce;
+  text-decoration: none;
+}
+header .nav a:active{
+  color: #7c818c;
+}
 /* end of header */
 
 
-h1{
+
+/* h1{
     Margin: 20 0 30 10;
-}
+} */
 
 .TOP{
 width: 100%;
@@ -64,20 +65,20 @@ padding:20;
     display:flex;
     width:100%;
     align-items: center;
-    text-align:  center;
+    /* text-align:  center; */
     justify-content:center;  
 }
 .works-item{
 /*     width :100%;  */
-    padding: 20;
+    padding: 10;
     justify-content:center;
     display: inline-block;      /* インラインブロックにする */ 
     object-fit: cover; 
     }
 
 .works-item img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     object-fit: cover; 
     object-position: 0 100%;
 }

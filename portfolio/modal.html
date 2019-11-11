@@ -1,128 +1,41 @@
 <!-- DOCTYPE HTML -->
 <html>
   <head>
-    <link rel="stylesheet" href="./modal.css" />
     <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./js/modal.js"></script>
   </head>
 
   <body>
-    <!-- template for the modal component -->
-    <script type="text/x-template" id="modal-template">
-      <transition name="modal">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-container">
-              <div class="modal-header">
-                <slot name="header">
-                  <!-- default header -->
-                </slot>
-                <!-- here is close button -->
-                <button class="modal-default-button" @click="$emit('close')" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-
-              </div>
-
-              <!-- Here is modal contents -->
-              <div class="modal-body">
-                <slot name="body">
-                  <!-- default body -->
-                  <!-- Here is for exhibit ID and NO. -->
-                  <div class="modal-no">NO.<span>1  </span>ID:<span>A-7</span></div>
-
-                  <div class="modal-wrapper2">
-                   <!-- Here is exhibit picture -->
-                    <div class="modal-pic">
-                        <img src="./asset/2_hipbone_with_arrowhead.jpg" alt="exhibit">
-                    </div>
-                    <!-- Here is for Right side of modal contents -->
-                  <div class = "modal-right">
-                    <!-- This is Tag area -->
-                    <span class="badge badge-secondary">fighting</span>
-                    <!-- This is Audio part -->
-                    <div class="modal-audio">
-                        <audio src="./asset/asibue.mp3" controls>
-                    </div>
-                    <!-- here is for explaintation of exhibit  -->
-                    <div class="modal-explain">
-                      <p>Human bone unearthed from Sanganji Kaizuka (shell mound) in Shinchimachi, Fukushima Prefecture.</p>
-                    </div>
-                  </div>
-                </div>
-                </slot>
-              </div>
-
-              <div class = "comment-header">
-                <h2>
-                  Review
-                </h2>
-                <a href="https://www.google.com/intl/ja_jp/forms/about/"><img src="./asset/AddComent.svg" alt="Add File"></a>
-              </div>
-              <!-- Here is for costomer comment list -->
-                <div class="comment-box">
-                    <ul class="list-unstyled">
-                        <li class="media">
-                          <!-- <img src="..." class="mr-3" alt=""> -->
-                          <div class="media-body">
-                              <hr>
-                            <h5 class="mt-0 mb-1">Voice1</h5>
-                            The arrowhead is piercing from above and seems to be result of an unfortunate accident during hunting.
-                          </div>
-                        </li>
-                        <li class="media my-4">
-
-                          <!-- <img src="..." class="mr-3" alt="..."> -->
-                          <div class="media-body">
-                              <hr>
-                            <h5 class="mt-0 mb-1">Voice2</h5>
-                            There are theories that hunting is the origin of war . But hunting is for survival and war for murder, the two couldn't be the same ...
-                          </div>
-                        </li>
-                        <li class="media">
-                          <!-- <img src="..." class="mr-3" alt="..."> -->
-                          <div class="media-body">
-                            <hr>
-                            <h5 class="mt-0 mb-1">Voice3</h5>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                          </div>
-                        </li>
-                      </ul>
-                </div>
-
-               <div class="modal-footer">
-                 <slot name="footer">
-                   <!-- default footer -->
-                 </slot>
-              <!-- </div> -->
-            </div>
-            </div>
+    <div class="container">
+      <h1>外部htmlをポップアップする</h1>
+      <ul class="link_list">
+        <li>
+          <div class=works-item>
+            <img src="./img/works/graphics/Poster1.png" alt="...">
           </div>
+        </li>
+        <li>hogehoge</li>
+        <li>クリック1</li>
+        <li>クリック2</li>
+        <li>クリック3</li>
+        <li>クリック4</li>
+      </ul>
+      <div class="box">
+        <div class="box_inner">
+          <!-- ↓ここに.load_xxが入る -->
+          <ul class="box_load"> </ul> <!-- ↑ここに.load_xxが入る -->
+          <div class="close"> 閉じる </div>
+          <ul class="arrows">
+            <li class="arrow_left"><span class="arrow_span">←</span></li>
+            <li class="arrow_rigth"><span class="arrow_span">→</span></li>
+          </ul>
         </div>
-      </transition>
-    </script>
-
-    <!-- app -->
-    <div id="app">
-      <!-- if you push button modal window appear -->
-      <button id="show-modal" @click="showModal = true">Show Modal</button>
-      <!-- use the modal component, pass in the prop -->
-      <modal v-if="showModal" @close="showModal = false">
-        <!--
-        you can use custom content here to overwrite
-        default content
-      -->
-  <!-- this is title of exhibit -->
-      <h3 slot="header">Hip bone pierced by an arrowhead</h3>
-      </modal>
+      </div>
+      <div class="box_cover"> </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./modal.js"></script>
+    
   </body>
 </html>
